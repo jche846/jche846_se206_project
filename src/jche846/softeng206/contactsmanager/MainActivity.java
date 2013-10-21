@@ -109,9 +109,9 @@ public class MainActivity extends Activity {
     //List<All_contacts> displayList = db.getAllContacts();
     private void setUpListView(){
     	
-    	db.addContact(new All_contacts("James", "Chen","021696969","63696969", "12345","jameschen@hotmail.com", "69","69/69/69"));
-    	//displayList.add(new All_contacts("Robin", "Feng","364513422131"));
-    	//displayList.add(new All_contacts("Alan", "Lau","6969696969"));
+    	//db.addContact(new All_contacts("James", "Chen","021696969","63696969", "12345","jameschen@hotmail.com", "69","69/69/69"));
+    	displayList.add(new All_contacts("Robin", "Feng","364513422131"));
+    	displayList.add(new All_contacts("Alan", "Lau","6969696969"));
     	//displayList.a	dd(new All_contacts("John", "Lee","3296969632131"));
     	
     	ListAdapter listAdapter= new CustomListAdapter();
