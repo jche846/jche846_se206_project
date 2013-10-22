@@ -87,7 +87,6 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         db.close();   
     }
     
-    
     // Getting all the informations of a single contact by reading information of its row.
     public All_contacts getContact(int id){
     	SQLiteDatabase db = this.getReadableDatabase();
@@ -139,14 +138,14 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         return contactList;
     }
     
-    //This method will return the total number of contacts in the database
+    /**This method will return the total number of contacts in the database
     public int getContactsCount() {
         String countQuery = "SELECT  * FROM " + TABLE_CONTACTS;
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery(countQuery, null);
         cursor.close();
         return cursor.getCount();
-    }
+    */
     
     //This method will update the edit made to an existing contact
     public int updateContact(All_contacts contact) {
