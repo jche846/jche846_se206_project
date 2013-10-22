@@ -49,11 +49,21 @@ public class Add_new_contact extends Activity {
 			@Override
 			public void onClick(View v) {
 				
+				String first =addFirst.getText().toString();
+				String last =addLast.getText().toString();
+				String mobile =addMobile.getText().toString();
+				String home =addHome.getText().toString();
+				String work =addWork.getText().toString();
+				String email =addEmail.getText().toString();
+				String homeadd =addHomeAdd.getText().toString();
+				String dob =addDOB.getText().toString();
 				
+						db.addContact(new All_contacts(first,last,mobile,home,work,email,homeadd,dob));
 				
 				Intent intent= new Intent();
         		intent.setClass(Add_new_contact.this, MainActivity.class);
         		startActivity(intent);
+        		
 				}
         	 });
 		
