@@ -105,11 +105,10 @@ public class MainActivity extends Activity {
     		return listItemView;
     	}
     }
-    //List<All_contacts> displayList = db.getAllContacts();
     List<All_contacts> displayList = new ArrayList<All_contacts>();
     private void setUpListView(){
     	
-    	All_contacts contact = new All_contacts("James", "Chen","021431413","64342341","43153141","jche846","2132112","04/13/1994");
+    	All_contacts contact = new All_contacts("Alan", "Lau","002169696","64342341","43153141","jche846","2132112","04/13/1994");
     	db.addContact(contact);
     	displayList.add(contact);
     	//displayList.add(new All_contacts("James", "chen","d","d","f","d","d","d"));
