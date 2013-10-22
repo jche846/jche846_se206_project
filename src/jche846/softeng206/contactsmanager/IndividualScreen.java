@@ -24,6 +24,7 @@ import android.widget.Toast;
 import android.widget.BaseAdapter;
 
 public class IndividualScreen extends Activity {
+	DatabaseHandler db = new DatabaseHandler(this);
 	
 	private ListView listView;
 	private Button editButton;
@@ -33,6 +34,7 @@ public class IndividualScreen extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_individual_screen);
+		displayList = db.getAllContacts();
 		
 		//The ListView
 		listView=(ListView)findViewById(R.id.individual_screen);
