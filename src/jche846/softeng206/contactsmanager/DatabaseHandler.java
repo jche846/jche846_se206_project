@@ -145,9 +145,8 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         Cursor cursor = db.rawQuery(countQuery, null);
         cursor.close();
         return cursor.getCount();
-    */
-    
-    //This method will update the edit made to an existing contact
+    */ 
+ //This method will update the edit made to an existing contact
     public int updateContact(All_contacts contact) {
         SQLiteDatabase db = this.getWritableDatabase();
      
