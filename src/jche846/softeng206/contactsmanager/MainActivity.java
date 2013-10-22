@@ -21,7 +21,6 @@ import android.widget.Toast;
 
 public class MainActivity extends Activity {
 	DatabaseHandler db = new DatabaseHandler(this);
-
 	
 	// Create button objects
 	private ListView listView;
@@ -32,10 +31,10 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        
+        displayList = db.getAllContacts();
         //List View
         listView = (ListView)findViewById(R.id.contacts_screen);
-
+        
         //The Edit button, set it to change activity on click
         buttonEdit= (Button)findViewById(R.id.edit);
         buttonEdit.setOnClickListener(new View.OnClickListener(){
@@ -82,6 +81,7 @@ public class MainActivity extends Activity {
     	
     	CustomListAdapter(){
     		super(MainActivity.this, android.R.layout.simple_list_item_1, displayList);
+    		//super(MainActivity.this, android.R.layout.simple_list_item_1, db.getAllContacts());
     		
     	}
     	
@@ -105,14 +105,18 @@ public class MainActivity extends Activity {
     		return listItemView;
     	}
     }
-    List<All_contacts> displayList = new ArrayList<All_contacts>();
     //List<All_contacts> displayList = db.getAllContacts();
+    List<All_contacts> displayList = new ArrayList<All_contacts>();
     private void setUpListView(){
     	
-    	//db.addContact(new All_contacts("James", "Chen","021696969","63696969", "12345","jameschen@hotmail.com", "69","69/69/69"));
-    	displayList.add(new All_contacts("Robin", "Feng","364513422131"));
-    	displayList.add(new All_contacts("Alan", "Lau","6969696969"));
-    	//displayList.a	dd(new All_contacts("John", "Lee","3296969632131"));
+    	All_contacts contact = new All_contacts("James", "Chen","021431413","64342341","43153141","jche846","2132112","04/13/1994");
+    	db.addContact(contact);
+    	displayList.add(contact);
+    	//displayList.add(new All_contacts("James", "chen","d","d","f","d","d","d"));
+    	//displayList.add(new All_contacts("James", "Chen","0210432141"));
+    	//displayList.add(new All_contacts("Robin", "Feng","364513422131"));
+    	//displayList.add(new All_contacts("Alan", "Lau","6969696969"));
+    	//displayList.add(new All_contacts("John", "Lee","3296969632131"));
     	
     	ListAdapter listAdapter= new CustomListAdapter();
     	listView.setAdapter(listAdapter);
@@ -172,10 +176,10 @@ public class MainActivity extends Activity {
   		@Override
   		public void onItemClick(AdapterView<?> parentView, View clickedView, int clickedViewPosition,
   				long id) {
-  			All_contacts selectedContact =displayList.get(clickedViewPosition);
+  			//All_contacts selectedContact =displayList.get(clickedViewPosition);
   			
-  			String displayString = "You have selected " + "\n" + "First Name: "+ selectedContact.getFirst() + "\n" +"Last Name: " + selectedContact.getLast() + "\n" + "Mobile Phone Number: " + selectedContact.getMobile();
-  			Toast.makeText(clickedView.getContext(), displayString, Toast.LENGTH_LONG).show();
+  			//String displayString = "You have selected " + "\n" + "First Name: "+ selectedContact.getFirst() + "\n" +"Last Name: " + selectedContact.getLast() + "\n" + "Mobile Phone Number: " + selectedContact.getMobile();
+  			//Toast.makeText(clickedView.getContext(), displayString, Toast.LENGTH_LONG).show();
   			
   		}
   		
