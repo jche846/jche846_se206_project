@@ -123,6 +123,7 @@ public class MainActivity extends Activity {
     	
     }
     
+    /**
     //Sorting methods (by first name, last name, mobile phone, email)
     private List<All_contacts> sortFirst(List<All_contacts> contactList){
     	List<All_contacts> displayList = new ArrayList<All_contacts>();
@@ -166,7 +167,7 @@ public class MainActivity extends Activity {
     	displayList.add(new All_contacts("Robin", "Feng","364513422131"));
     	displayList.add(new All_contacts("Alan", "Lau","6969696969"));
     	return displayList;
-    }
+    }*/
     
   //Custom adapter
   	class listItemClickedListener implements AdapterView.OnItemClickListener{
