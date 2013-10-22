@@ -87,6 +87,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         db.close();   
     }
     
+    
     // Getting all the informations of a single contact by reading information of its row.
     public All_contacts getContact(int id){
     	SQLiteDatabase db = this.getReadableDatabase();
