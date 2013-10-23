@@ -1,5 +1,6 @@
 package jche846.softeng206.contactsmanager;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
@@ -20,13 +21,20 @@ public class SortScreen extends Activity {
 	DatabaseHandler db = new DatabaseHandler(this);
 	
 	public void sortFirst(){
-		
+		 List<All_contacts> displayList = db.getAllContacts();
+		 List<All_contacts> list= new ArrayList<All_contacts>();
+		 
+		 for (int i= 0; i < displayList.size(); i++){
+			 
+		 }
 	}
 	public void sortLast(){
-		
+		 List<All_contacts> displayList = db.getAllContacts();
+		 List<All_contacts> list= new ArrayList<All_contacts>();
 	}
 	public void sortMobile(){
-	
+		 List<All_contacts> displayList = db.getAllContacts();
+		 List<All_contacts> list= new ArrayList<All_contacts>();
 	}
 	class firstComparator implements Comparator<All_contacts> {
 

@@ -1,5 +1,8 @@
 package jche846.softeng206.contactsmanager;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import android.os.Bundle;
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -9,9 +12,11 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 public class Edit_contacts extends Activity {
 	DatabaseHandler db = new DatabaseHandler(this);
+
 	//create button objects
 	private Button SaveButton;
 	private Button CancelSave;
@@ -30,6 +35,9 @@ public class Edit_contacts extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_edit_contacts);
+		//Intent intent= getIntent();
+		//All_contacts contact = (All_contacts) intent.getSerializableExtra("All_contacts");
+
 		//Set the edit text boxes
 		editFirst = (EditText)findViewById(R.id.editText1);
 		editLast = (EditText)findViewById(R.id.editText2);
@@ -39,6 +47,16 @@ public class Edit_contacts extends Activity {
 		editEmail = (EditText)findViewById(R.id.editText6);
 		editHomeAdd = (EditText)findViewById(R.id.editText7);
 		editDOB = (EditText)findViewById(R.id.editText8);
+
+		/**editFirst.setText(contact.getFirst(), TextView.BufferType.EDITABLE);
+		editLast.setText(contact.getLast(), TextView.BufferType.EDITABLE);
+		editMobile.setText(contact.getMobile(), TextView.BufferType.EDITABLE);
+		editHome.setText(contact.getHome(), TextView.BufferType.EDITABLE);
+		editWork.setText(contact.getWork(), TextView.BufferType.EDITABLE);
+		editEmail.setText(contact.getEmail(), TextView.BufferType.EDITABLE);
+		editHomeAdd.setText(contact.getHomeAddress(), TextView.BufferType.EDITABLE);
+		editDOB.setText(contact.getDOB(), TextView.BufferType.EDITABLE); */
+		
 		
 		//The save button, set it to change activity on click
 		SaveButton= (Button)findViewById(R.id.SaveButton);
@@ -82,6 +100,8 @@ public class Edit_contacts extends Activity {
         		startActivity(intent);
 				}
         	 });
+		
+	
 	}
 
 	@Override
