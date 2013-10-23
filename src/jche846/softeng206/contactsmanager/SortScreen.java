@@ -1,5 +1,9 @@
 package jche846.softeng206.contactsmanager;
 
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+
 import android.os.Bundle;
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -13,6 +17,46 @@ public class SortScreen extends Activity {
 	private Button button1;
 	private Button button2;
 	private Button button3;
+	DatabaseHandler db = new DatabaseHandler(this);
+	
+	public void sortFirst(){
+		
+	}
+	public void sortLast(){
+		
+	}
+	public void sortMobile(){
+	
+	}
+	class firstComparator implements Comparator<All_contacts> {
+
+		@Override
+		public int compare(All_contacts arg0, All_contacts arg1) {
+			// TODO Auto-generated method stub
+			return 0;
+		}
+	   
+	}
+	
+	class lastComparator implements Comparator<All_contacts> {
+		@Override
+		public int compare(All_contacts lhs, All_contacts rhs) {
+			// TODO Auto-generated method stub
+			return 0;
+		}
+	   
+	}
+	
+	class mobileComparator implements Comparator<All_contacts> {
+
+		@Override
+		public int compare(All_contacts lhs, All_contacts rhs) {
+			// TODO Auto-generated method stub
+			return 0;
+		}
+	   
+	}
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -30,7 +74,18 @@ public class SortScreen extends Activity {
 				dialogBuilder.setMessage("Are you sure you want to sort your contacts by first name?");
 				
 				dialogBuilder.setNegativeButton("No",null);
-				dialogBuilder.setPositiveButton("Yes",null);
+				dialogBuilder.setPositiveButton("Yes",new DialogInterface.OnClickListener() {
+					
+					
+					@Override
+					public void onClick(DialogInterface dialog, int Button) {
+
+						Intent intent1= new Intent();
+						intent1.setClass(SortScreen.this, MainActivity.class);
+						startActivity(intent1);
+						
+					}
+				}); 
 				dialogBuilder.setCancelable(true);
 				
 				dialogBuilder.create().show();

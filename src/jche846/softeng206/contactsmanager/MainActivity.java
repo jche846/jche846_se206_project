@@ -1,6 +1,7 @@
 package jche846.softeng206.contactsmanager;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import android.os.Bundle;
@@ -33,19 +34,6 @@ public class MainActivity extends Activity {
         displayList = db.getAllContacts();
         //List View
         listView = (ListView)findViewById(R.id.contacts_screen);
-        
-       /** //The Edit button, set it to change activity on click
-        buttonEdit= (Button)findViewById(R.id.edit);
-        buttonEdit.setOnClickListener(new View.OnClickListener(){
-
-			@Override
-			public void onClick(View v) {
-				
-				Intent intent= new Intent();
-        		intent.setClass(MainActivity.this, IndividualScreen.class);
-        		startActivity(intent);
-				}
-        	 });*/
         
         //The sort button, set it to change activity on click
         buttonSort= (Button)findViewById(R.id.sort);
@@ -122,6 +110,7 @@ public class MainActivity extends Activity {
     	
     }
     
+    
     /**
     //Sorting methods (by first name, last name, mobile phone, email)
     private List<All_contacts> sortFirst(List<All_contacts> contactList){
@@ -184,6 +173,7 @@ public class MainActivity extends Activity {
   		}
   		
   	}
+
 
 
     @Override
