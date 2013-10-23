@@ -58,7 +58,7 @@ public class Add_new_contact extends Activity {
 				String homeadd =addHomeAdd.getText().toString();
 				String dob =addDOB.getText().toString();
 				
-						db.addContact(new All_contacts(first,last,mobile,home,work,email,homeadd,dob));
+				db.addContact(new All_contacts(first,last,mobile,home,work,email,homeadd,dob));
 				
 				Intent intent= new Intent();
         		intent.setClass(Add_new_contact.this, MainActivity.class);

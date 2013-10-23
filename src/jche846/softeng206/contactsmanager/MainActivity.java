@@ -179,7 +179,7 @@ public class MainActivity extends Activity {
   				long id) {
   			All_contacts sc = db.getAllContacts().get(clickedViewPosition);
   			Intent intent= new Intent();
-  			intent.putExtra("all_contacts", sc);
+  			intent.putExtra("All_contacts", sc);
     		intent.setClass(MainActivity.this, IndividualScreen.class);
     		startActivity(intent);
   			

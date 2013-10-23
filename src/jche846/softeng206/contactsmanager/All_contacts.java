@@ -1,6 +1,9 @@
 package jche846.softeng206.contactsmanager;
 
-public class All_contacts {
+import java.io.Serializable;
+
+public class All_contacts implements Serializable{
+	private static final long serialVersionUID = 1L;
 	int _id; //id
 	String first;//first name
 	String last;//last name

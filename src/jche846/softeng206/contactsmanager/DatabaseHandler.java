@@ -67,8 +67,9 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     /**
      * The following methods are implemented to handle data in the database.
      */
-    
-  //Adding a new contact, this method accepts Contact object as parameter. Once data is inserted in database it needs to be closed.
+  //---------------------------------------------------------------------------------------------------------------------  
+  //Adding a new contact, this method accepts Contact object as parameter. 
+  //Once data is inserted in database it needs to be closed.
     public void addContact(All_contacts contact){
     	SQLiteDatabase db = this.getWritableDatabase();
     	
@@ -87,6 +88,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         db.close();   
     }
     
+    //---------------------------------------------------------------------------------------------------------------------
     // Getting all the informations of a single contact by reading information of its row.
     public All_contacts getContact(int id){
     	SQLiteDatabase db = this.getReadableDatabase();
@@ -113,8 +115,9 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         return contact;
     }
     
-    //This method returns all the contacts in the database by looping through each contact and storing it in an array list of contact class type.
-    
+   //---------------------------------------------------------------------------------------------------------------------
+   //This method returns all the contacts in the database by looping through each contact
+   //and storing it in an array list of contact class type.
     public List<All_contacts> getAllContacts() {
     	//Create a new arrayList of contact class type
         List<All_contacts> contactList = new ArrayList<All_contacts>();
@@ -153,6 +156,8 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         cursor.close();
         return cursor.getCount();
     */ 
+    
+  //---------------------------------------------------------------------------------------------------------------------  
  //This method will update the edit made to an existing contact
     public int updateContact(All_contacts contact) {
         SQLiteDatabase db = this.getWritableDatabase();
@@ -172,6 +177,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                 new String[] { String.valueOf(contact.getID()) });
     }
     
+    //---------------------------------------------------------------------------------------------------------------------
     //This method will delete a single contact
     public void deleteContact(All_contacts contact) {
         SQLiteDatabase db = this.getWritableDatabase();

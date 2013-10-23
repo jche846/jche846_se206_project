@@ -77,7 +77,21 @@ public class IndividualScreen extends Activity {
 				dialogBuilder.setMessage("Are you sure you want to delete this contact?");
 				
 				dialogBuilder.setNegativeButton("No",null);
-				dialogBuilder.setPositiveButton("Yes",null); 
+				dialogBuilder.setPositiveButton("Yes",new DialogInterface.OnClickListener() {
+					
+					
+					@Override
+					public void onClick(DialogInterface dialog, int Button) {
+						Intent intent= getIntent();
+						All_contacts contact = (All_contacts) intent.getSerializableExtra("All_contacts");
+						db.deleteContact(contact);
+						
+						Intent intent1= new Intent();
+						intent1.setClass(IndividualScreen.this, MainActivity.class);
+						startActivity(intent1);
+						
+					}
+				}); 
 				dialogBuilder.setCancelable(true);
 				
 				dialogBuilder.create().show();
@@ -96,7 +110,6 @@ public class IndividualScreen extends Activity {
 		Intent intent= getIntent();
 		All_contacts contact = (All_contacts) intent.getSerializableExtra("All_contacts");
 		List<String> displayList= new ArrayList<String>();
-		
 		displayList.add("First Name: " + contact.getFirst());//first
 		displayList.add("Last Name: " + contact.getLast());//last
 		displayList.add("Mobile Phone Number: "+ contact.getMobile());//mobile
