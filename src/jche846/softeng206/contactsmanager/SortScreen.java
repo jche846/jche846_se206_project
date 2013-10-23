@@ -13,7 +13,6 @@ public class SortScreen extends Activity {
 	private Button button1;
 	private Button button2;
 	private Button button3;
-	private Button button4;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -79,25 +78,7 @@ public class SortScreen extends Activity {
 			}
 		});
         
-        
-        //Fourth sorting option
-        button4 = (Button)findViewById(R.id.sort_button_4);
-        button4.setOnClickListener(new View.OnClickListener() {
-			
-			@Override
-			public void onClick(View v) {
-				AlertDialog.Builder dialogBuilder=new AlertDialog.Builder(SortScreen.this);
-				dialogBuilder.setTitle("Confirmation.");
-				dialogBuilder.setMessage("Are you sure you want to sort your contacts by E-mail address?");
-				
-				dialogBuilder.setNegativeButton("No",null);
-				dialogBuilder.setPositiveButton("Yes",null);
-				dialogBuilder.setCancelable(true);
-				
-				dialogBuilder.create().show();
-			}
-		});
-		
+ 
 		
 	}
 
