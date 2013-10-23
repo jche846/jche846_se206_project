@@ -25,8 +25,10 @@ public class MainActivity extends Activity {
 	DatabaseHandler db = new DatabaseHandler(this);
 	private ListView listView;
 	// Create button objects
-	private Button buttonSort;
 	private Button buttonAdd;
+	private Button sort1;
+	private Button sort2;
+	private Button sort3;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,18 +37,12 @@ public class MainActivity extends Activity {
         //List View
         listView = (ListView)findViewById(R.id.contacts_screen);
         
-        //The sort button, set it to change activity on click
-        buttonSort= (Button)findViewById(R.id.sort);
-        buttonSort.setOnClickListener(new View.OnClickListener(){
-
-			@Override
-			public void onClick(View v) {
-				
-				Intent intent= new Intent();
-        		intent.setClass(MainActivity.this, SortScreen.class);
-        		startActivity(intent);
-				}
-        	 });
+        //sort by first
+        sort1 = (Button)findViewById(R.id.sort_button_1);
+        //sort by last
+        sort2 = (Button)findViewById(R.id.sort_button_2);
+        //sort by mobile
+        sort3 = (Button)findViewById(R.id.sort_button_3);
         
         //The add button, set it to change activity on click
         buttonAdd= (Button)findViewById(R.id.add);

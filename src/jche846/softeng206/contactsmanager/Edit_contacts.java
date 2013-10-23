@@ -101,7 +101,6 @@ public class Edit_contacts extends Activity {
 				}
         	 });
 		
-	
 	}
 
 	@Override
