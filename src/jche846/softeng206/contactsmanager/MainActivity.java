@@ -15,16 +15,17 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.AdapterView;
 import android.widget.Toast;
 
 public class MainActivity extends Activity {
 	DatabaseHandler db = new DatabaseHandler(this);
-	
-	// Create button objects
 	private ListView listView;
-	private Button buttonEdit;
+	// Create button objects
+	//private RadioButton radiobutton;
+	//private Button buttonEdit;
 	private Button buttonSort;
 	private Button buttonAdd;
     @Override
@@ -35,7 +36,7 @@ public class MainActivity extends Activity {
         //List View
         listView = (ListView)findViewById(R.id.contacts_screen);
         
-        //The Edit button, set it to change activity on click
+       /** //The Edit button, set it to change activity on click
         buttonEdit= (Button)findViewById(R.id.edit);
         buttonEdit.setOnClickListener(new View.OnClickListener(){
 
@@ -46,7 +47,7 @@ public class MainActivity extends Activity {
         		intent.setClass(MainActivity.this, IndividualScreen.class);
         		startActivity(intent);
 				}
-        	 });
+        	 });*/
         
         //The sort button, set it to change activity on click
         buttonSort= (Button)findViewById(R.id.sort);
@@ -82,7 +83,6 @@ public class MainActivity extends Activity {
     	CustomListAdapter(){
     		super(MainActivity.this, android.R.layout.simple_list_item_1, displayList);
     		//super(MainActivity.this, android.R.layout.simple_list_item_1, db.getAllContacts());
-    		
     	}
     	
     	@Override
@@ -103,14 +103,15 @@ public class MainActivity extends Activity {
     		mobile.setText(displayList.get(position).getMobile());
     		
     		return listItemView;
+    		
     	}
     }
     List<All_contacts> displayList = new ArrayList<All_contacts>();
     private void setUpListView(){
     	
-    	All_contacts contact = new All_contacts("Alan", "Lau","002169696","64342341","43153141","jche846","2132112","04/13/1994");
-    	db.addContact(contact);
-    	displayList.add(contact);
+    	//All_contacts contact = new All_contacts("James", "Chen","0216969696966","64342341","43153141","jche846","2132112","04/13/1994");
+    	//db.addContact(contact);
+    	//displayList.add(contact);
     	//displayList.add(new All_contacts("James", "chen","d","d","f","d","d","d"));
     	//displayList.add(new All_contacts("James", "Chen","0210432141"));
     	//displayList.add(new All_contacts("Robin", "Feng","364513422131"));
@@ -176,10 +177,9 @@ public class MainActivity extends Activity {
   		@Override
   		public void onItemClick(AdapterView<?> parentView, View clickedView, int clickedViewPosition,
   				long id) {
-  			//All_contacts selectedContact =displayList.get(clickedViewPosition);
-  			
-  			//String displayString = "You have selected " + "\n" + "First Name: "+ selectedContact.getFirst() + "\n" +"Last Name: " + selectedContact.getLast() + "\n" + "Mobile Phone Number: " + selectedContact.getMobile();
-  			//Toast.makeText(clickedView.getContext(), displayString, Toast.LENGTH_LONG).show();
+  			Intent intent= new Intent();
+    		intent.setClass(MainActivity.this, IndividualScreen.class);
+    		startActivity(intent);
   			
   		}
   		
