@@ -59,8 +59,7 @@ public class IndividualScreen extends Activity {
 
 			@Override
 			public void onClick(View v) {
-				Intent intent= new Intent();
-				//intent.putExtra("All_contacts2", db.getContact(contact.getID()));
+				Intent intent = new Intent();
         		intent.setClass(IndividualScreen.this, Edit_contacts.class);
         		startActivity(intent);
 				}

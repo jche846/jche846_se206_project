@@ -148,9 +148,9 @@ public class MainActivity extends Activity {
   		@Override
   		public void onItemClick(AdapterView<?> parentView, View clickedView, int clickedViewPosition,
   				long id) {
-  			All_contacts sc = db.getAllContacts().get(clickedViewPosition);
-  			Intent intent= new Intent();
-  			intent.putExtra("All_contacts", sc);
+  			All_contacts selectedContact = displayList.get(clickedViewPosition);
+			Intent intent = new Intent();
+			intent.putExtra("All_contacts", displayList.get(clickedViewPosition));
   			
     		intent.setClass(MainActivity.this, IndividualScreen.class);
     		startActivity(intent);
