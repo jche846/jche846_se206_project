@@ -42,16 +42,7 @@ public class Edit_contacts extends Activity {
 				dialogBuilder.setMessage("Are you sure you want to save the new changes made??");
 				
 				dialogBuilder.setNegativeButton("No",null);
-				dialogBuilder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-					
-					@Override
-					public void onClick(DialogInterface dialog, int Button) {
-						Intent intent= new Intent();
-						intent.setClass(Edit_contacts.this, MainActivity.class);
-						startActivity(intent);
-						
-					}
-				});
+				dialogBuilder.setPositiveButton("Yes", null);
 				
 				dialogBuilder.setCancelable(true);
 				

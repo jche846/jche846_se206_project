@@ -35,7 +35,6 @@ public class IndividualScreen extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_individual_screen);
-		//displayList = db.getContact(2);
 		
 		//The ListView
 		listView=(ListView)findViewById(R.id.individual_screen);
@@ -78,16 +77,7 @@ public class IndividualScreen extends Activity {
 				dialogBuilder.setMessage("Are you sure you want to delete this contact?");
 				
 				dialogBuilder.setNegativeButton("No",null);
-				dialogBuilder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-					
-					@Override
-					public void onClick(DialogInterface dialog, int Button) {
-						Intent intent= new Intent();
-						intent.setClass(IndividualScreen.this, MainActivity.class);
-						startActivity(intent);
-						
-					}
-				});
+				dialogBuilder.setPositiveButton("Yes",null); 
 				dialogBuilder.setCancelable(true);
 				
 				dialogBuilder.create().show();
