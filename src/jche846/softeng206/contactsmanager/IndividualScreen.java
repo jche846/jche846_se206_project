@@ -92,17 +92,19 @@ public class IndividualScreen extends Activity {
 		//Each individual contacts has 8 display items, 
 		//Namely- first name, last name, mobile, home number, work number, email, date of birth, home address (not all have to be filled)
 		
-		//Create an array list to store the displays (Stub  implementation for view an individual contact)
-		
+		//Create an array list to store the displays (Stub implementation for view an individual contact)
+		Intent intent= getIntent();
+		All_contacts contact = (All_contacts) intent.getSerializableExtra("All_contacts");
 		List<String> displayList= new ArrayList<String>();
-		displayList.add("First Name: James");//first
-		displayList.add("Last Name: Chen");//last
-		displayList.add("Mobile Phone Number: 0210432141");//mobile
-		displayList.add("Home Number: 14142213");//home
-		displayList.add("Work Number: 46546546");//work
-		displayList.add("E-mail: hurhurhur@gmail.com");//email
-		displayList.add("Date Of Birth: 01/01/1969");//date of birth
-		displayList.add("Home Address: not avaliable");//home address
+		
+		displayList.add("First Name: " + contact.getFirst());//first
+		displayList.add("Last Name: " + contact.getLast());//last
+		displayList.add("Mobile Phone Number: "+ contact.getMobile());//mobile
+		displayList.add("Home Number: " +contact.getHome());//home
+		displayList.add("Work Number: " +contact.getWork());//work
+		displayList.add("E-mail: "+contact.getEmail());//email
+		displayList.add("Date Of Birth: " +contact.getDOB());//date of birth
+		displayList.add("Home Address: " +contact.getHomeAddress());//home address
 		
 		//Create a new list Adapter object for listViews.
 		ListAdapter listAdapter = new CustomListAdapter(IndividualScreen.this, displayList);
