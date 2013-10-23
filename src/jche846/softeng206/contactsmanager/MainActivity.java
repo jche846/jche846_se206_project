@@ -24,8 +24,6 @@ public class MainActivity extends Activity {
 	DatabaseHandler db = new DatabaseHandler(this);
 	private ListView listView;
 	// Create button objects
-	//private RadioButton radiobutton;
-	//private Button buttonEdit;
 	private Button buttonSort;
 	private Button buttonAdd;
     @Override

@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 public class Edit_contacts extends Activity {
+	DatabaseHandler db = new DatabaseHandler(this);
 	//create button objects
 	private Button SaveButton;
 	private Button CancelSave;
@@ -29,11 +30,20 @@ public class Edit_contacts extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_edit_contacts);
+		//Set the edit text boxes
+		editFirst = (EditText)findViewById(R.id.editText1);
+		editLast = (EditText)findViewById(R.id.editText2);
+		editMobile = (EditText)findViewById(R.id.editText3);
+		editHome = (EditText)findViewById(R.id.editText4);
+		editWork = (EditText)findViewById(R.id.editText5);
+		editEmail = (EditText)findViewById(R.id.editText6);
+		editHomeAdd = (EditText)findViewById(R.id.editText7);
+		editDOB = (EditText)findViewById(R.id.editText8);
 		
 		//The save button, set it to change activity on click
 		SaveButton= (Button)findViewById(R.id.SaveButton);
 		SaveButton.setOnClickListener(new View.OnClickListener(){
-
+			
 			@Override
 			public void onClick(View v) {
 				
@@ -46,9 +56,10 @@ public class Edit_contacts extends Activity {
 					
 					@Override
 					public void onClick(DialogInterface dialog, int Button) {
-						Intent intent= new Intent();
-						intent.setClass(Edit_contacts.this, MainActivity.class);
-						startActivity(intent);
+						
+						Intent intent1= new Intent();
+						intent1.setClass(Edit_contacts.this, MainActivity.class);
+						startActivity(intent1);
 						
 					}
 				});
