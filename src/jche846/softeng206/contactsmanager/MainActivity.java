@@ -111,52 +111,6 @@ public class MainActivity extends Activity {
     }
     
     
-    /**
-    //Sorting methods (by first name, last name, mobile phone, email)
-    private List<All_contacts> sortFirst(List<All_contacts> contactList){
-    	List<All_contacts> displayList = new ArrayList<All_contacts>();
-    	displayList.add(new All_contacts("Alan", "Lau","6969696969"));
-    	displayList.add(new All_contacts("James", "Chen","0210432141"));
-    	displayList.add(new All_contacts("John", "Lee","3296969632131"));
-    	displayList.add(new All_contacts("Robin", "Feng","364513422131"));
-    	return displayList;
-    	
-    }
-    private List<All_contacts> sortLast(List<All_contacts> contactList){
-    	List<All_contacts> displayList = new ArrayList<All_contacts>();
-    	displayList.add(new All_contacts("James", "Chen","0210432141"));
-    	displayList.add(new All_contacts("Robin", "Feng","364513422131"));
-    	displayList.add(new All_contacts("Alan", "Lau","6969696969"));	
-    	displayList.add(new All_contacts("John", "Lee","3296969632131"));
-    	return displayList;
-    	
-    }
-    private List<All_contacts> sortEmail(List<All_contacts> contactList){
-    	List<All_contacts> displayList = new ArrayList<All_contacts>();
-    	//emails in order
-    	return displayList;
-    	
-    }
-    private List<All_contacts> sortMobile(List<All_contacts> contactList){
-    	List<All_contacts> displayList = new ArrayList<All_contacts>();
-    	displayList.add(new All_contacts("James", "Chen","0210432141"));
-    	displayList.add(new All_contacts("John", "Lee","3296969632131"));
-    	displayList.add(new All_contacts("Robin", "Feng","364513422131"));
-    	displayList.add(new All_contacts("Alan", "Lau","6969696969"));
-    	return displayList;
-    	
-    }
-    
-    //Delete a contact
-    private List<All_contacts> deleteContact(List<All_contacts> contactList){
-    	List<All_contacts> displayList = new ArrayList<All_contacts>();
-    	//removes 1 contact
-    	displayList.add(new All_contacts("John", "Lee","3296969632131"));
-    	displayList.add(new All_contacts("Robin", "Feng","364513422131"));
-    	displayList.add(new All_contacts("Alan", "Lau","6969696969"));
-    	return displayList;
-    }*/
-    
   //Custom adapter
   	class listItemClickedListener implements AdapterView.OnItemClickListener{
 
@@ -167,6 +121,7 @@ public class MainActivity extends Activity {
   			All_contacts sc = db.getAllContacts().get(clickedViewPosition);
   			Intent intent= new Intent();
   			intent.putExtra("All_contacts", sc);
+  			
     		intent.setClass(MainActivity.this, IndividualScreen.class);
     		startActivity(intent);
   			
