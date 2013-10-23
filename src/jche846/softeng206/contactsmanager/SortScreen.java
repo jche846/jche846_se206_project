@@ -3,6 +3,8 @@ package jche846.softeng206.contactsmanager;
 import android.os.Bundle;
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
@@ -29,7 +31,16 @@ public class SortScreen extends Activity {
 				dialogBuilder.setMessage("Are you sure you want to sort your contacts by first name?");
 				
 				dialogBuilder.setNegativeButton("No",null);
-				dialogBuilder.setPositiveButton("Yes", null);
+				dialogBuilder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+					
+					@Override
+					public void onClick(DialogInterface dialog, int Button) {
+						Intent intent= new Intent();
+						intent.setClass(SortScreen.this, MainActivity.class);
+						startActivity(intent);
+						
+					}
+				});
 				dialogBuilder.setCancelable(true);
 				
 				dialogBuilder.create().show();
@@ -49,7 +60,16 @@ public class SortScreen extends Activity {
 				dialogBuilder.setMessage("Are you sure you want to sort your contacts by last name?");
 				
 				dialogBuilder.setNegativeButton("No",null);
-				dialogBuilder.setPositiveButton("Yes", null);
+				dialogBuilder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+					
+					@Override
+					public void onClick(DialogInterface dialog, int Button) {
+						Intent intent= new Intent();
+						intent.setClass(SortScreen.this, MainActivity.class);
+						startActivity(intent);
+						
+					}
+				});
 				dialogBuilder.setCancelable(true);
 				
 				dialogBuilder.create().show();
@@ -69,7 +89,16 @@ public class SortScreen extends Activity {
 				dialogBuilder.setMessage("Are you sure you want to sort your contacts by mobile phone number?");
 				
 				dialogBuilder.setNegativeButton("No",null);
-				dialogBuilder.setPositiveButton("Yes", null);
+				dialogBuilder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+					
+					@Override
+					public void onClick(DialogInterface dialog, int Button) {
+						Intent intent= new Intent();
+						intent.setClass(SortScreen.this, MainActivity.class);
+						startActivity(intent);
+						
+					}
+				});
 				dialogBuilder.setCancelable(true);
 				
 				dialogBuilder.create().show();
@@ -89,16 +118,23 @@ public class SortScreen extends Activity {
 				dialogBuilder.setMessage("Are you sure you want to sort your contacts by E-mail address?");
 				
 				dialogBuilder.setNegativeButton("No",null);
-				dialogBuilder.setPositiveButton("Yes", null);
+				dialogBuilder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+					
+					@Override
+					public void onClick(DialogInterface dialog, int Button) {
+						Intent intent= new Intent();
+						intent.setClass(SortScreen.this, MainActivity.class);
+						startActivity(intent);
+						
+					}
+				});
 				dialogBuilder.setCancelable(true);
 				
 				dialogBuilder.create().show();
-				
 			}
 		});
 		
 		
-        
 	}
 
 	@Override
