@@ -16,7 +16,7 @@ import android.widget.TextView;
 
 public class Edit_contacts extends Activity {
 	DatabaseHandler db = new DatabaseHandler(this);
-
+	private All_contacts contact;
 	//create button objects
 	private Button SaveButton;
 	private Button CancelSave;
@@ -35,8 +35,7 @@ public class Edit_contacts extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_edit_contacts);
-		//Intent intent= getIntent();
-		//All_contacts contact = (All_contacts) intent.getSerializableExtra("All_contacts");
+		
 
 		//Set the edit text boxes
 		editFirst = (EditText)findViewById(R.id.editText1);
@@ -47,8 +46,10 @@ public class Edit_contacts extends Activity {
 		editEmail = (EditText)findViewById(R.id.editText6);
 		editHomeAdd = (EditText)findViewById(R.id.editText7);
 		editDOB = (EditText)findViewById(R.id.editText8);
-
-		/**editFirst.setText(contact.getFirst(), TextView.BufferType.EDITABLE);
+		
+		/**Intent intent= getIntent();
+		contact = (All_contacts) intent.getSerializableExtra("All_contacts2");
+		editFirst.setText(contact.getFirst(), TextView.BufferType.EDITABLE);
 		editLast.setText(contact.getLast(), TextView.BufferType.EDITABLE);
 		editMobile.setText(contact.getMobile(), TextView.BufferType.EDITABLE);
 		editHome.setText(contact.getHome(), TextView.BufferType.EDITABLE);
@@ -74,6 +75,25 @@ public class Edit_contacts extends Activity {
 					
 					@Override
 					public void onClick(DialogInterface dialog, int Button) {
+						/**String first = editFirst.getText().toString();
+						String last = editLast.getText().toString();
+						String mobile = editMobile.getText().toString();
+						String home = editHome.getText().toString();
+						String work = editWork.getText().toString();
+						String email = editEmail.getText().toString();
+						String homeadd = editHomeAdd.getText().toString();
+						String dob = editDOB.getText().toString();
+						
+						contact.setFirst(first);
+						contact.setLast(last);
+						contact.setMobile(mobile);
+						contact.setHomeAddress(homeadd);
+						contact.setWork(work);
+						contact.setEmail(email);
+						contact.setHomeAddress(homeadd);
+						contact.setDateOfBirth(dob);
+						
+						db.updateContact(contact);*/
 						
 						Intent intent1= new Intent();
 						intent1.setClass(Edit_contacts.this, MainActivity.class);

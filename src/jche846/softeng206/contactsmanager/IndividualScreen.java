@@ -30,6 +30,7 @@ public class IndividualScreen extends Activity {
 	private Button editButton;
 	private Button deleteContact;
 	private Button backButton;
+	private All_contacts contact;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -58,8 +59,8 @@ public class IndividualScreen extends Activity {
 
 			@Override
 			public void onClick(View v) {
-				
 				Intent intent= new Intent();
+				//intent.putExtra("All_contacts2", db.getContact(contact.getID()));
         		intent.setClass(IndividualScreen.this, Edit_contacts.class);
         		startActivity(intent);
 				}
