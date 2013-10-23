@@ -92,9 +92,16 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     	SQLiteDatabase db = this.getReadableDatabase();
     	
     	//Cursor to enumerate through the rows of a contact.
-    	Cursor cursor = db.query(TABLE_CONTACTS, new String[] { COLUMN_ID,
-    			COLUMN_FIRST, COLUMN_LAST, COLUMN_MOBILE, COLUMN_HOME, 
-    			COLUMN_WORK, COLUMN_EMAIL, COLUMN_HOMEADD, COLUMN_DOB }, COLUMN_ID + "=?",
+    	Cursor cursor = db.query(TABLE_CONTACTS, new String[] { 
+    			COLUMN_ID,
+    			COLUMN_FIRST,
+    			COLUMN_LAST, 
+    			COLUMN_MOBILE, 
+    			COLUMN_HOME, 
+    			COLUMN_WORK, 
+    			COLUMN_EMAIL, 
+    			COLUMN_HOMEADD, 
+    			COLUMN_DOB }, COLUMN_ID + "=?",
                 new String[] { String.valueOf(id) }, null, null, null, null);
         if (cursor != null)
             cursor.moveToFirst();
