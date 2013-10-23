@@ -2,6 +2,7 @@ package jche846.softeng206.contactsmanager;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 import android.os.Bundle;
@@ -39,10 +40,47 @@ public class MainActivity extends Activity {
         
         //sort by first
         sort1 = (Button)findViewById(R.id.sort_button_1);
+        sort1.setOnClickListener(new View.OnClickListener() {
+        	
+			@Override
+			public void onClick(View v) {
+				Collections.sort(displayList, new Comparator<All_contacts>(){
+					@Override
+					public int compare(All_contacts c1, All_contacts c2) {
+						return c1.getFirst().toLowerCase().compareToIgnoreCase(c2.getFirst().toLowerCase());
+					}
+				});
+				setUpListView();}
+		});
+        
         //sort by last
         sort2 = (Button)findViewById(R.id.sort_button_2);
+        sort2.setOnClickListener(new View.OnClickListener() {
+        	
+			@Override
+			public void onClick(View v) {
+				Collections.sort(displayList, new Comparator<All_contacts>(){
+					@Override
+					public int compare(All_contacts c1, All_contacts c2) {
+						return c1.getLast().toLowerCase().compareToIgnoreCase(c2.getLast().toLowerCase());
+					}
+				});
+				setUpListView();}
+		});
         //sort by mobile
         sort3 = (Button)findViewById(R.id.sort_button_3);
+        sort3.setOnClickListener(new View.OnClickListener() {
+        	
+			@Override
+			public void onClick(View v) {
+				Collections.sort(displayList, new Comparator<All_contacts>(){
+					@Override
+					public int compare(All_contacts c1, All_contacts c2) {
+						return c1.getMobile().toLowerCase().compareTo(c2.getMobile().toLowerCase());
+					}
+				});
+				setUpListView();}
+		});
         
         //The add button, set it to change activity on click
         buttonAdd= (Button)findViewById(R.id.add);
@@ -56,6 +94,8 @@ public class MainActivity extends Activity {
         		startActivity(intent);
 				}
         	 });
+        
+        
         
         setUpListView();
     }
@@ -91,14 +131,9 @@ public class MainActivity extends Activity {
     List<All_contacts> displayList = new ArrayList<All_contacts>();
     private void setUpListView(){
     	
-    	//All_contacts contact = new All_contacts("James", "Chen","0216969696966","64342341","43153141","jche846","2132112","04/13/1994");
+    	//All_contacts contact = new All_contacts("James!", "Chen","02169666","64342341","43153141","jche846","2132112","04/13/1994");
     	//db.addContact(contact);
     	//displayList.add(contact);
-    	//displayList.add(new All_contacts("James", "chen","d","d","f","d","d","d"));
-    	//displayList.add(new All_contacts("James", "Chen","0210432141"));
-    	//displayList.add(new All_contacts("Robin", "Feng","364513422131"));
-    	//displayList.add(new All_contacts("Alan", "Lau","6969696969"));
-    	//displayList.add(new All_contacts("John", "Lee","3296969632131"));
     	
     	ListAdapter listAdapter= new CustomListAdapter();
     	listView.setAdapter(listAdapter);
