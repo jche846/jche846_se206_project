@@ -97,7 +97,7 @@ public class MainActivity extends Activity {
         setUpListView();
     }
     
-    private class CustomListAdapter extends ArrayAdapter<All_contacts>{
+    /**private class CustomListAdapter extends ArrayAdapter<All_contacts>{
     	
     	CustomListAdapter(){
     		super(MainActivity.this, android.R.layout.simple_list_item_1, displayList);
@@ -124,7 +124,7 @@ public class MainActivity extends Activity {
     		return listItemView;
     		
     	}
-    }
+    }*/
     List<All_contacts> displayList = new ArrayList<All_contacts>();
     
     private void setUpListView(){
@@ -133,7 +133,8 @@ public class MainActivity extends Activity {
     	//db.addContact(contact);
     	//displayList.add(contact);
     	
-    	ListAdapter listAdapter= new CustomListAdapter();
+    	
+    	ListAdapter listAdapter= new CustomListAdapter(this, android.R.layout.simple_list_item_1, displayList);
     	listView.setAdapter(listAdapter);
     	listView.setOnItemClickListener(new listItemClickedListener());
     	

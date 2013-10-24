@@ -14,7 +14,7 @@ public class Add_new_contact extends Activity {
 	//create button objects
 	private Button buttonAdd;
 	private Button buttonCancel;
-	
+
 	//edit text boxes
 	private EditText addFirst;
 	private EditText addLast;
@@ -30,7 +30,7 @@ public class Add_new_contact extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_add_new_contact);
-		
+
 		//Set the edit text boxes
 		addFirst = (EditText)findViewById(R.id.addText1);
 		addLast = (EditText)findViewById(R.id.addText2);
