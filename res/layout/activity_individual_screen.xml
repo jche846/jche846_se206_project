@@ -28,8 +28,7 @@
 			android:layout_height="40dp"
 			android:layout_weight="1"
 			android:text="@string/edit_contact" 
-			android:textColor="#FF0000"/>
-	    
+			android:textColor="#3399FF"/>
     </LinearLayout>
     
 	
@@ -44,7 +43,7 @@
 			android:layout_height="40dp"
 			android:layout_weight="1"
 			android:text="@string/del_contact" 
-			android:textColor="#FF0000"/>
+			android:textColor="#3399FF"/>
 
     </LinearLayout>
 
@@ -54,6 +53,6 @@
 	    android:layout_height="40dp"
 	    android:layout_weight="0.01"
 	    android:text="Back"
-	    android:textColor="#FF0000" />
+	    android:textColor="#3399FF" />
 
 </LinearLayout>
