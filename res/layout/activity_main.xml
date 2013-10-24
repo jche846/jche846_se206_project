@@ -12,6 +12,12 @@
         android:layout_margin="10dp"
         android:text="@string/greet"
         android:textColor="#3399FF" />
+    
+    <EditText android:id="@+id/inputSearch"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:hint="Type to start searching for contacts"
+        android:inputType="textVisiblePassword"/>
 
 
     <ListView
