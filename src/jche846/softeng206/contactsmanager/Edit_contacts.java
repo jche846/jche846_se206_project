@@ -47,8 +47,9 @@ public class Edit_contacts extends Activity {
 		editHomeAdd = (EditText)findViewById(R.id.editText7);
 		editDOB = (EditText)findViewById(R.id.editText8);
 		
-		/**Intent intent= getIntent();
+		Intent intent= getIntent();
 		contact = (All_contacts) intent.getSerializableExtra("All_contacts2");
+		
 		editFirst.setText(contact.getFirst(), TextView.BufferType.EDITABLE);
 		editLast.setText(contact.getLast(), TextView.BufferType.EDITABLE);
 		editMobile.setText(contact.getMobile(), TextView.BufferType.EDITABLE);
@@ -56,8 +57,8 @@ public class Edit_contacts extends Activity {
 		editWork.setText(contact.getWork(), TextView.BufferType.EDITABLE);
 		editEmail.setText(contact.getEmail(), TextView.BufferType.EDITABLE);
 		editHomeAdd.setText(contact.getHomeAddress(), TextView.BufferType.EDITABLE);
-		editDOB.setText(contact.getDOB(), TextView.BufferType.EDITABLE); */
-		
+		editDOB.setText(contact.getDOB(), TextView.BufferType.EDITABLE); 
+	
 		
 		//The save button, set it to change activity on click
 		SaveButton= (Button)findViewById(R.id.SaveButton);
@@ -75,7 +76,7 @@ public class Edit_contacts extends Activity {
 					
 					@Override
 					public void onClick(DialogInterface dialog, int Button) {
-						/**String first = editFirst.getText().toString();
+						String first = editFirst.getText().toString();
 						String last = editLast.getText().toString();
 						String mobile = editMobile.getText().toString();
 						String home = editHome.getText().toString();
@@ -87,17 +88,17 @@ public class Edit_contacts extends Activity {
 						contact.setFirst(first);
 						contact.setLast(last);
 						contact.setMobile(mobile);
-						contact.setHomeAddress(homeadd);
+						contact.setHome(home);
 						contact.setWork(work);
 						contact.setEmail(email);
 						contact.setHomeAddress(homeadd);
 						contact.setDateOfBirth(dob);
 						
-						db.updateContact(contact);*/
+						db.updateContact(contact);
 						
-						Intent intent1= new Intent();
-						intent1.setClass(Edit_contacts.this, MainActivity.class);
-						startActivity(intent1);
+						Intent intent= new Intent();
+						intent.setClass(Edit_contacts.this, MainActivity.class);
+						startActivity(intent);
 						
 					}
 				});

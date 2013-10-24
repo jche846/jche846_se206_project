@@ -60,6 +60,7 @@ public class IndividualScreen extends Activity {
 			@Override
 			public void onClick(View v) {
 				Intent intent = new Intent();
+				intent.putExtra("All_contacts2", db.getContact(contact.getID()));
         		intent.setClass(IndividualScreen.this, Edit_contacts.class);
         		startActivity(intent);
 				}
@@ -108,7 +109,7 @@ public class IndividualScreen extends Activity {
 		
 		//Create an array list to store the displays (Stub implementation for view an individual contact)
 		Intent intent= getIntent();
-		All_contacts contact = (All_contacts) intent.getSerializableExtra("All_contacts");
+		contact = (All_contacts) intent.getSerializableExtra("All_contacts");
 		List<String> displayList= new ArrayList<String>();
 		displayList.add("First Name: " + contact.getFirst());//first
 		displayList.add("Last Name: " + contact.getLast());//last
