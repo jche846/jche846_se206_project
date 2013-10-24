@@ -106,8 +106,8 @@ public class IndividualScreen extends Activity {
 	private void setUpListView(){
 		//Each individual contacts has 8 display items, 
 		//Namely- first name, last name, mobile, home number, work number, email, date of birth, home address (not all have to be filled)
-		
 		//Create an array list to store the displays (Stub implementation for view an individual contact)
+		//Getting information of database, passed on from MainActivity.
 		Intent intent= getIntent();
 		contact = (All_contacts) intent.getSerializableExtra("All_contacts");
 		List<String> displayList= new ArrayList<String>();

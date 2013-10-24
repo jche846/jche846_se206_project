@@ -94,8 +94,6 @@ public class MainActivity extends Activity {
 				}
         	 });
         
-        
-        
         setUpListView();
     }
     
@@ -128,6 +126,7 @@ public class MainActivity extends Activity {
     	}
     }
     List<All_contacts> displayList = new ArrayList<All_contacts>();
+    
     private void setUpListView(){
     	
     	//All_contacts contact = new All_contacts("James!", "Chen","02169666","64342341","43153141","jche846","2132112","04/13/1994");
