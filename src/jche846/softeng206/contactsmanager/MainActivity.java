@@ -15,6 +15,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -29,13 +30,20 @@ public class MainActivity extends Activity {
 	private Button sort1;
 	private Button sort2;
 	private Button sort3;
+	// Search EditText
+    EditText inputSearch;
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         displayList = db.getAllContacts();
+        
         //List View
         listView = (ListView)findViewById(R.id.contacts_screen);
+        
+        //search text
+        inputSearch = (EditText) findViewById(R.id.inputSearch);
         
         //sort by first
         sort1 = (Button)findViewById(R.id.sort_button_1);
