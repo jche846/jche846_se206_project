@@ -9,6 +9,8 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
@@ -30,20 +32,49 @@ public class MainActivity extends Activity {
 	private Button sort1;
 	private Button sort2;
 	private Button sort3;
+	int textlength = 0;
 	// Search EditText
     EditText inputSearch;
     
+    private CustomListAdapter adapter;
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+    	
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         displayList = db.getAllContacts();
         
         //List View
-        listView = (ListView)findViewById(R.id.contacts_screen);
+        listView= (ListView)findViewById(R.id.contacts_screen);
         
         //search text
         inputSearch = (EditText) findViewById(R.id.inputSearch);
+        
+        
+        //enabling search functionality
+        
+       /**putSearch.addTextChangedListener(new TextWatcher() {
+        	
+            @Override
+            public void onTextChanged(CharSequence cs, int arg1, int arg2, int arg3) {
+                // When user changed the Text
+            	adapter.getFilter().filter(toString());  
+            }
+
+            @Override
+            public void beforeTextChanged(CharSequence arg0, int arg1, int arg2,
+                    int arg3) {
+                // TODO Auto-generated method stub
+
+            }
+
+           @Override
+           public void afterTextChanged(Editable s) {
+               // TODO Auto-generated method stub
+
+           }
+        });*/
         
         //sort by first
         sort1 = (Button)findViewById(R.id.sort_button_1);
@@ -105,34 +136,6 @@ public class MainActivity extends Activity {
         setUpListView();
     }
     
-    /**private class CustomListAdapter extends ArrayAdapter<All_contacts>{
-    	
-    	CustomListAdapter(){
-    		super(MainActivity.this, android.R.layout.simple_list_item_1, displayList);
-    		//super(MainActivity.this, android.R.layout.simple_list_item_1, db.getAllContacts());
-    	}
-    	
-    	@Override
-    	public View getView(int position, View convertView, ViewGroup parent){
-    		//Create a layout inflater to inflate our fml layout for each item in the list
-    		LayoutInflater inflater = (LayoutInflater) MainActivity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-    		
-    		//Inflate the list view item layout. Keep a reference to the inflated view. Note there is no view root specified
-    		View listItemView = inflater.inflate(R.layout.custom_list_item_layout,null);
-    		//Access text view elements inside the view
-    		TextView first= (TextView)listItemView.findViewById(R.id.list_item_first_name);
-    		TextView last= (TextView)listItemView.findViewById(R.id.list_item_last_name);
-    		TextView mobile= (TextView)listItemView.findViewById(R.id.list_item_mobile_phone);
-    		
-    		//Set the text for each text view
-    		first.setText(displayList.get(position).getFirst());
-    		last.setText(displayList.get(position).getLast());
-    		mobile.setText(displayList.get(position).getMobile());
-    		
-    		return listItemView;
-    		
-    	}
-    }*/
     List<All_contacts> displayList = new ArrayList<All_contacts>();
     
     private void setUpListView(){
